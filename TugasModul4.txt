@@ -37,3 +37,44 @@ public class Main {
         }
     }
 }
+
+
+
+
+
+
+
+
+}else {
+                        System.out.println ("==========================================");
+                        System.out.println ("              PENARIKAN UANG              ");
+                        System.out.println ("==========================================");
+                        System.out.print ("Masukan jumlah uang >> ");
+                        penarikan = input.nextInt();
+
+                        System.out.println("Saldo Awal        : Rp" + saldo);
+                        System.out.println("Penarikan         : Rp" + penarikan);
+                        saldo = saldo - penarikan;
+                        System.out.println("Saldo akhir       : Rp" + saldo);
+                        System.out.print("\nPIN ANDA : ");
+                        pin = input.nextInt();
+
+                        if (pin == 12345) {
+                            System.out.println("> PIN BENAR ");
+                            if (saldo < (50000)) {
+                                System.out.println("> SALDO AKHIR KURANG DARI Rp50000 : TRANSAKSI GAGAL");
+                            } else {
+                                System.out.println("> SALDO CUKUP : TRANSAKSI BERHASIL");
+                            }
+                        } else {
+                                System.out.println("> PIN SALAH. TRANSAKSI GAGAL");
+                        }
+                    }
+                System.out.println ("\nTEKAN 0 UNTUK KEMBALI KE MENU");
+                System.out.println ("TEKAN 1 UNTUK KELUAR");
+                System.out.print ("->> ");
+                proses = input.nextInt();
+                ++proses;
+            } while ( proses <= 1);
+            System.out.println("TERIMA KASIH TELAH MENGGUNAKAN ATM MINI");
+    }
