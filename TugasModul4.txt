@@ -23,7 +23,7 @@ import java.util.Scanner;
             System.out.println("HARAP BERHATI-HATI SAAT MEMASUKKAN PIN.");
         }
     }
-}------------------------------------------------------------------------------------------------------------Ilham
+}
 
 //Akses Class
 package com.tugas;
@@ -63,7 +63,7 @@ public class Akses {
                         jum_transfer = input.nextInt();
 
                         System.out.print ("PIN ANDA : ");
-                        pin = input.nextInt();---------------------------------------------------------------------Razi
+                        pin = input.nextInt();
 
 
                         if (pin == 12345) {
@@ -104,7 +104,7 @@ public class Akses {
                         else {
                             System.out.println ("NO REKENING TIDAK TERDAFTAR. TRANSAKSI BATAL");
                         }
-                        saldo=saldo-jum_transfer ;-------------------------------------------------------------------Dika
+                        saldo=saldo-jum_transfer ;
                     }else {
                         System.out.println ("==========================================");
                         System.out.println ("              PENARIKAN UANG              ");
