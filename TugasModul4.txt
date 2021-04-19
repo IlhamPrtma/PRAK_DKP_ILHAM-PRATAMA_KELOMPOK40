@@ -1,4 +1,72 @@
-if (pin == 12345) {
+//Main Class
+package com.tugas;
+import java.util.Scanner;
+ public static void main(String[] args) {
+        print();
+        Scanner input = new Scanner(System.in);
+        int pin;
+
+        System.out.println("==========================================");
+        System.out.println("               ATM MINI 40                ");
+        System.out.println("             SELAMAT DATANG               ");
+        System.out.println("                                          ");
+        System.out.println("==========================================");
+        System.out.println("SILAHKAN INPUTKAN PIN ANDA");
+        System.out.print("-> ");
+        pin = input.nextInt();
+
+        if (pin == 12345) {
+            Akses objek = new Akses();
+            objek.akses();
+        }else {
+            System.out.println ("PIN ANDA SALAH ! ATM ANDA DIBLOKIR.");
+            System.out.println("HARAP BERHATI-HATI SAAT MEMASUKKAN PIN.");
+        }
+    }
+}------------------------------------------------------------------------------------------------------------Ilham
+
+//Akses Class
+package com.tugas;
+import java.util.Scanner;
+
+public class Akses {
+    public void akses() {
+        int pin, option, proses, saldo,no_rek, jum_transfer, penarikan;
+        saldo = 10000000;
+        Scanner input = new Scanner(System.in);
+            do {
+                System.out.println ("------------------------------------------");
+                System.out.println("MENU TRANSAKSI ANDA");
+                System.out.println("SILAHKAN PILIH OPTION");
+
+                System.out.println("-> 1. INFO SALDO");
+                System.out.println("-> 2. TRANSFER");
+                System.out.println("-> 3. PENARIKAN");
+                System.out.println ("------------------------------------------");
+
+                System.out.print ("OPTION -> ");
+                option = input.nextInt();
+
+                if ( option == 1){
+                    System.out.println ("==========================================");
+                    System.out.println ("     SALDO ANDA SAAT INI : Rp" + saldo     );
+                    System.out.println ("==========================================");
+                }else
+                    if (option == 2){
+                        System.out.println ("=================================");
+                        System.out.println ("          TRANSFER DANA          ");
+                        System.out.println ("=================================");
+
+                        System.out.print( "Masukan No Rekening     : " );
+                        no_rek = input.nextInt();
+                        System.out.print( "Masukan Jumlah Transfer : Rp" );
+                        jum_transfer = input.nextInt();
+
+                        System.out.print ("PIN ANDA : ");
+                        pin = input.nextInt();---------------------------------------------------------------------Razi
+
+
+                        if (pin == 12345) {
                             System.out.println ("> PIN BENAR");
                             if (saldo < (200000)) {
                                 System.out.println  ("> SALDO AKHIR KURANG DARI Rp200000 : TRANSAKSI GAGAL");
@@ -36,4 +104,38 @@ if (pin == 12345) {
                         else {
                             System.out.println ("NO REKENING TIDAK TERDAFTAR. TRANSAKSI BATAL");
                         }
-                        saldo=saldo-jum_transfer ;
+                        saldo=saldo-jum_transfer ;-------------------------------------------------------------------Dika
+                    }else {
+                        System.out.println ("==========================================");
+                        System.out.println ("              PENARIKAN UANG              ");
+                        System.out.println ("==========================================");
+                        System.out.print ("Masukan jumlah uang >> ");
+                        penarikan = input.nextInt();
+
+                        System.out.println("Saldo Awal        : Rp" + saldo);
+                        System.out.println("Penarikan         : Rp" + penarikan);
+                        saldo = saldo - penarikan;
+                        System.out.println("Saldo akhir       : Rp" + saldo);
+                        System.out.print("\nPIN ANDA : ");
+                        pin = input.nextInt();
+
+                        if (pin == 12345) {
+                            System.out.println("> PIN BENAR ");
+                            if (saldo < (50000)) {
+                                System.out.println("> SALDO AKHIR KURANG DARI Rp50000 : TRANSAKSI GAGAL");
+                            } else {
+                                System.out.println("> SALDO CUKUP : TRANSAKSI BERHASIL");
+                            }
+                        } else {
+                                System.out.println("> PIN SALAH. TRANSAKSI GAGAL");
+                        }
+                    }
+                System.out.println ("\nTEKAN 0 UNTUK KEMBALI KE MENU");
+                System.out.println ("TEKAN 1 UNTUK KELUAR");
+                System.out.print ("->> ");
+                proses = input.nextInt();
+                ++proses;
+            } while ( proses <= 1);
+            System.out.println("TERIMA KASIH TELAH MENGGUNAKAN ATM MINI");
+    }
+}
